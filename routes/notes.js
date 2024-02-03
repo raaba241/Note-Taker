@@ -6,9 +6,11 @@ const {
     writeToFile,
   } = require('../helpers/fsUtils');
 
+
 notes.get ('/',(req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 })
+
 
 notes.post('/', (req, res) => {   
     const { title, text } = req.body
@@ -16,7 +18,8 @@ notes.post('/', (req, res) => {
     if (req.body){
         const newNote = {
             title,
-            text
+            text,
+            notes_id: uuidv4(),
         };
 
         readAndAppend(newNote, './db/db.json')
@@ -25,6 +28,8 @@ notes.post('/', (req, res) => {
         res.error('Error adding new note')
     }
 })
+
+// DELETE Route for a specific tip
 
 
 module.exports = notes;
