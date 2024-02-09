@@ -3,7 +3,7 @@
 const express = require('express');
 const path = require('path');
 //Api will require index.js
-const api = require('./routes/index.js');
+const api = require('./routes');
 
 //Selecting the port 
 const PORT = process.env.PORT || 3001;
@@ -14,18 +14,18 @@ const app = express();
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', api);
-
 //Serving Public Files
 app.use(express.static('public'));
 
-//Routing url endpoints for / and /notes
-app.get('/', (req, res) => 
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-)
+app.use('/api', api);
+
 
 app.get('/notes', (req, res) => 
-    res.sendFile(path.join(__dirname, '/public/notes.html'))
+res.sendFile(path.join(__dirname, './public/notes.html'))
+)
+//Routing url endpoints for / and /notes
+app.get('*', (req, res) => 
+    res.sendFile(path.join(__dirname, './public/index.html'))
 )
 
 //Listening for server
