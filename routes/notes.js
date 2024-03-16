@@ -14,10 +14,10 @@ notes.get ('/',(req, res) => {
 
 //Posting a new note
 notes.post('/', (req, res) => {   
-    //Deconstructing the request and extracting the title and the text
+   
     const { title, text } = req.body
     
-    //If a req.body exists then make a new note
+    //If the request has a body
     if (req.body){
         const newNote = {
             title,

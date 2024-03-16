@@ -20,12 +20,12 @@ app.use(express.static('public'));
 app.use('/api', api);
 
 
-app.get('/notes', (req, res) => 
-res.sendFile(path.join(__dirname, './public/notes.html'))
+app.get('/notes', (req, res) =>
+  res.sendFile(path.join(__dirname, './public/notes.html'))
 )
 //Routing url endpoints for / and /notes
-app.get('*', (req, res) => 
-    res.sendFile(path.join(__dirname, './public/index.html'))
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, './public/index.html'))
 )
 
 //Listening for server

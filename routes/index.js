@@ -12,3 +12,4 @@ app.use('/notes', notes);
 
 //Exports the router to be used in server.js
 module.exports = app;
+
