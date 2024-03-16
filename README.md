@@ -1,4 +1,6 @@
-# Note-Taker-App
+# Note-Taker-App [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Mozilla
 
 ## Description 
 Note-taker is created to let users take notes when they want to do a tast, view the notes at a later date, and delete them after 
